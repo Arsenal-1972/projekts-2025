@@ -1,0 +1,24 @@
+Problēmas apraksts, kāpēc tā ir aktuāla:
+Mūsdienās cilvēki ikdienā saskaras ar svešvalodām gan internetā, gan ceļojot, gan strādājot starptautiskā vidē. Ne visiem ir laiks vai iespēja apgūt svešvalodas, tādēļ ērti lietojami tulkošanas rīki kļūst arvien nozīmīgāki.
+Mērķauditorija, kura lietos programmu:
+cilvēki no 10 līdz 100 gadiem, kuriem ir vajadzīgs vienkaršs un viegli uztverams tulkotajs.
+Eksistējošo risinājumu analīze, ekrānšāviņi, plusi un mīnusi:
+1. Google Translate
+Ļoti populārs tulkotājs, kas atbalsta daudzas valodas un piedāvā automātisku valodas noteikšanu.
+Plusi: plašs valodu atbalsts, ērta mobilā versija.
+Mīnusi: nepieciešams internets, reklāmas, ne vienmēr precīzi tulkojumi.
+
+2. DeepL Translator
+Pazīstams ar augstu tulkojumu kvalitāti, īpaši Eiropas valodās.
+Plusi: augsta kvalitāte, tīrs dizains.
+Mīnusi: mazāk valodu, pilnas funkcijas tikai maksas versijā.
+
+3. Yandex Translate
+Labs atbalsts krievu valodai, piedāvā balss ievadi.
+Plusi: labs krievu valodā, balss ievade.
+Mīnusi: sarežģīts interfeiss, var būt lēns.
+
+4. Telegram tulkošanas boti
+Ātra piekļuve tulkojumiem tieši Telegram aplikācijā.
+Plusi: ērts, ātrs.
+Mīnusi: atkarīgs no konkrētā bota kvalitātes.
