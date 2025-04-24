@@ -7,13 +7,13 @@ translator = ApplicationBuilder()
 # Обработка команды /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Привет! Я бот-переводчик. Напиши мне любой текст, и я переведу его на английский язык. 🇬🇧"
+        "Привет! Я бот-переводчик. Напиши мне любой текст, и я переведу его на русский язык.  RU"
     )
 # Перевод текста
 async def translate_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_text = update.message.text
     try:
-        translated = translator.translate(user_text, dest='en')  # перевод на английский
+        translated = translator.translate(user_text, dest='ru')  # перевод на английский
         await update.message.reply_text(f"Перевод: {translated.text}")
     except Exception as e:
         await update.message.reply_text(f"Ошибка перевода: {str(e)}")
