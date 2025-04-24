@@ -3,7 +3,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Con
 from googletrans import Translator
 
 # Инициализируем переводчик
-translator = Translator()
+translator = ApplicationBuilder()
 # Обработка команды /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
@@ -25,6 +25,5 @@ if __name__ == '__main__':
     # Обработчики команд и текста
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, translate_text))
-
     print("✅ Бот запущен и ждёт сообщений...")
     app.run_polling()
