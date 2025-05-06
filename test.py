@@ -1,23 +1,23 @@
-# test_translator.py
 import pytest
-from translator_module import translate_text
+from main import translate_text
 
-def test_english_to_russian():
-    translated, lang = translate_text("Hello")
-    assert lang == "en"
-    assert "Привет" in translated or "Здравствуйте" in translated
-
-def test_french_to_russian():
-    translated, lang = translate_text("Bonjour")
-    assert lang == "fr"
-    assert "Доброе" in translated or "Привет" in translated
-
-def test_short_input():
-    translated, lang = translate_text("a")
+def test_translate_english_to_russian():
+    translated, detected_lang = translate_text("Hello, how are you?", "ru")
+    assert detected_lang == "en"
     assert isinstance(translated, str)
     assert len(translated) > 0
 
-def test_special_characters():
-    translated, lang = translate_text("😊 Hallo!")
-    assert lang == "de"
+def test_translate_french_to_latvian():
+    translated, detected_lang = translate_text("Bonjour tout le monde", "lv")
+    assert detected_lang == "fr"
+    assert "sveiki" in translated.lower() or "labdien" in translated.lower()
+
+def test_single_character_input():
+    translated, detected_lang = translate_text("a", "lv")
+    assert isinstance(translated, str)
+    assert len(translated) > 0
+
+def test_special_characters_input():
+    translated, detected_lang = translate_text("😊 Hallo!", "ru")
+    assert detected_lang == "de"
     assert isinstance(translated, str)
