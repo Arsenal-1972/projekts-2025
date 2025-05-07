@@ -1,31 +1,18 @@
-Testēšana - 2 veiksmes scenāriji:
-  Lietotājs ievada angļu valodas tekstu:
-  Ievade: Hello, how are you?
-  Rezultāts: Tiek noteikta angļu valoda (en), un tiek atgriezts tulkojums uz krievu valodu.
-  
-  Lietotājs ievada vācu valodas tekstu:
-  Ievade: Guten Morgen!
-  Rezultāts: Tiek noteikta vācu valoda (de), un tiek atgriezts pareizs tulkojums krievu valodā.
+Testēšana — 2 veiksmes scenāriji:
+1) Ja lietotājs ir izvēlējies krievu valodu kā tulkošanas mērķvalodu un nosūta tekstu "Good night", tad bots pareizi atpazīst, ka teksta valoda ir angļu, un nosūta lietotājam tulkojumu krievu valodā, piemēram, "Спокойной ночи".
 
-Testēšana - 4 lietošanas scenāriji:
-  Lietotājs nosūta tukšu ziņojumu vai atstarpes:
-  Rezultāts: Botam būtu jāatgriež kļūdas ziņojums vai jāignorē.
-  
-  Lietotājs sūta tekstu ar simboliem/emocijzīmēm:
-  Ievade: Bonjour!
-  Rezultāts: Valoda tiek noteikta kā franču (fr), un teksts tiek pārtulkots.
-  
-  Lietotājs sūta tekstu ar vairākām valodām:
-  Ievade: Hello, как дела?
-  Rezultāts: Tulkojums var būt neprecīzs, bet sistēmai nevajadzētu avarēt.
-  
-  Lietotājs nosūta ļoti garu tekstu (>1000 simbolu):
-  Rezultāts: Botam jāapstrādā vai jāatsūta kļūda, ja limits tiek pārsniegts.
+2) Ja lietotājs ir izvēlējies latviešu valodu un nosūta ziņu "Guten Morgen", tad bots atpazīst vācu valodu un nosūta lietotājam tulkojumu latviešu valodā, piemēram, "Labrīt".
 
-Testēšana - 2 robež-scenāriji:
-  Īsākais iespējamais ievads:
-  Ievade: a
-  Rezultāts: Valoda tiek atpazīta, vai tiek parādīta kļūda par nepietiekamu informāciju.
-  
-  Ievads ar maksimālu atļauto rakstzīmju skaitu (Telegram ierobežojums ir 4096 simboli):
-  Rezultāts: Botam jāpārbauda vai tiek apstrādāts bez kļūdām (vai sadalīts).
+Testēšana — 4 lietošanas scenāriji:
+1) Ja lietotājs sākumā izvēlējās krievu valodu, bet pēc kāda laika nosūta komandu /language un izvēlas latviešu valodu, tad bots atjauno iestatījumus un turpmāk veic tulkošanu uz latviešu valodu.
+
+2) Ja lietotājs nekad iepriekš nav izvēlējies tulkošanas valodu un uzreiz nosūta tekstu, piemēram, "Hola", tad bots nepilda tulkošanu, bet tā vietā nosūta lietotājam valodu izvēles pogas.
+
+3) Ja lietotājs ir izvēlējies krievu valodu un nosūta tekstu "😊 Bonjour", tad bots ignorē emocijzīmi, pareizi atpazīst franču valodu un sniedz atbilstošu tulkojumu krievu valodā.
+
+4) Ja lietotājs ir izvēlējies tulkošanas valodu un nosūta ļoti garu tekstu, piemēram, tuvu 4000 simboliem, tad bots cenšas to tulkot un nosūtīt atpakaļ, vai arī informē lietotāju, ja ir pārkāpts simbolu limits.
+
+Testēšana — 2 robež-scenāriji:
+1) Ja lietotājs ir izvēlējies tulkošanas valodu un nosūta tikai vienu burtu, piemēram, "a", tad bots mēģina noteikt valodu un tulkot, bet, ja tas nav iespējams, nosūta kļūdas paziņojumu.
+
+2) Ja lietotājs ir izvēlējies tulkošanas valodu un nosūta tikai simbolus, piemēram, "!!! ???", tad bots nespēj noteikt valodu un sniedz lietotājam paziņojumu, ka tulkošana nav iespējama.
