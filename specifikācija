@@ -4,7 +4,7 @@ Funkcionālās prasības:
 Automātiska valodas noteikšana
   Botam jāspēj noteikt ziņojuma valoda automātiski.
 Tulkošana uz krievu valodu
-  Jebkurš ievadītais teksts tiek pārtulkots uz krievu valodu un nosūtīts atpakaļ lietotājam.
+  Jebkurš ievadītais teksts tiek pārtulkots krievu un latviešu valodās un nosūtīts atpakaļ lietotājam.
 Valodas koda parādīšana lietotājam
   Botam jāparāda, kāda valoda tika noteikta (piemēram: en, fr, lv, utt.).
 Kļūdu apstrāde un lietotāja informēšana
@@ -15,7 +15,7 @@ Uzticamība
 Veiktspēja
   Tulkojumam jānotiek sekundēs – ar minimālu aizkavi starp ziņojuma saņemšanu un atbildi.
 Lietojamība (UX)
-  Atbildes jāformatē saprotami un lietotājam draudzīgi, izmantojot emocijzīmes un Markdown formatējumu.
+  Atbildes jāformatē saprotami un lietotājam draudzīgi, izmantojot emocijzīmes.
 Paplašināmība
   Kods jāuzraksta tā, lai vēlāk varētu pievienot citu valodu atbalstu vai vairāk komandu (piem., tulkot uz angļu valodu).
 Drošība (API atslēgas glabāšana)
