@@ -31,7 +31,7 @@ def choose_language(message):
     markup.add(btn1, btn2)
     bot.send_message(
         message.chat.id,
-        "🌐 Lūdzu, izvēlies valodu, uz kuru vēlies tulkot ziņas:",
+        "🌐 Lūdzu, izvēlies valodu, kurā tu vēlies tulkot tekstu:",
         reply_markup=markup
     )
 
