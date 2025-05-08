@@ -2,6 +2,8 @@ import telebot
 from telebot import types
 from deep_translator import GoogleTranslator
 
+from functions import translation
+
 TOKEN = '7544879884:AAHN6d5uOU-ELlbjFYgOJ1D2GtIxNGlfH0I'
 bot = telebot.TeleBot(TOKEN)
 # Saglabā lietotāja izvēlēto mērķa valodu tulkošanai pēc chat.id
@@ -65,17 +67,11 @@ def translate(message):
             return
 # Iegūst lietotāja izvēlēto mērķa valodu
         target_lang = user_language_preferences[message.chat.id]
-# Izmanto GoogleTranslator, lai noteiktu ievades valodu un pārtulkotu uz mērķa valodu
-        translator = GoogleTranslator(source='auto', target=target_lang)
-        translated = translator.translate(message.text)
-        detected_lang_code = translator.source
         
-# Lietotājam saprotama valodas nosaukuma forma
-        lang_label = "krievu 🇷🇺" if target_lang == 'ru' else "latviešu 🇱🇻"
 # Nosūta lietotājam atbildi ar noteikto valodu un tulkojumu
         bot.send_message(
             message.chat.id,
-            f"🌍 Noteiktā valoda: `{detected_lang_code}`\n\n🔄 Tulkojums {lang_label}:\n{translated}",
+            translation(message.text, target_lang),
             parse_mode='Markdown'
         )
 
